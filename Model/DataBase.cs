@@ -164,9 +164,6 @@ namespace NewApp.Models
             data.Add(data23);
             data.Add(data24);
             return data;
-
-
         }
-
     }
 }
