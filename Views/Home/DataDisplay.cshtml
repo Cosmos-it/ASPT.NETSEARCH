@@ -1,0 +1,44 @@
+<!--IEnumerable<NewApp.AspNetCore.Models.Data>-->
+
+<section>
+<br>
+<br>
+<p>We are about to play with data search</p>
+
+
+<fieldset class="input-group">
+  <form asp-controller="Home" asp-action="DataDisplay">
+      <p>
+          <input type="text" name="searching" class="form-control" placeholder="enter value">
+          <input type="submit" value="Filter" class="btn"/>
+      </p>
+  </form>
+</fieldset>
+
+<br>
+
+  <table class="table table-inverse">
+  @if (Model != null ) {
+        <tr>
+            <th>#</th>
+            <th>Status</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Email</th>
+        </tr>
+        @for( var item = 0; item < Model.Count; item++) {
+            <tr>
+            <th>@item</th>
+            <td>@Model[item].UserStatus</td>
+            <td>@Model[item].FirstName</td>
+            <td>@Model[item].LastName</td>
+            <td>@Model[item].Email</td>
+            </tr>
+      }
+   }
+</table>
+@* @else if (Model == null) {
+  <div><span class="alert-warning">Nothing matches that</span></div>
+} *@
+
+</section>
